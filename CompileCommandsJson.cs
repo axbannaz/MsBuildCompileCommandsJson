@@ -108,7 +108,7 @@ public class CompileCommandsJson : Logger
             Console.SetOut(logStreamWriter);
         }
 
-        includeLookup = new Dictionary<string, bool>();
+        includeLookup = [];
         eventSource.AnyEventRaised += EventSource_AnyEventRaised;
         // eventSource.BuildStarted += EventSource_BuildStarted;
         // eventSource.BuildFinished += EventSource_BuildFinished;
@@ -122,7 +122,7 @@ public class CompileCommandsJson : Logger
 
         try
         {
-            commandLookup = new Dictionary<string, CompileCommand>();
+            commandLookup = [];
             if (File.Exists(outputFilePath))
             {
                 compileCommands = JsonConvert.DeserializeObject<List<CompileCommand>>(File.ReadAllText(outputFilePath));
@@ -131,7 +131,7 @@ public class CompileCommandsJson : Logger
             //AR - Not an else because it is possible for JsonConvert.DeserializeObject to return null
             if (compileCommands == null)
             {
-                compileCommands = new List<CompileCommand>();
+                compileCommands = [];
             }
 
             //AR - Create a dictionary for cleaner and faster cache lookup
@@ -278,7 +278,7 @@ public class CompileCommandsJson : Logger
                 throw new LoggerException($"Unexpected lack of CL.exe in {taskArgs.CommandLine}");
             }
 
-            List<string> arguments = new List<string>();
+            List<string> arguments = [];
 
             string compilerPath = taskArgs.CommandLine.Substring(0, clExeIndex + clExe.Length - 1);
 
@@ -294,8 +294,8 @@ public class CompileCommandsJson : Logger
                 "analyze:log", "analyze:stacksize", "analyze:max_paths",
                 "analyze:ruleset", "analyze:plugin"};
 
-            List<string> maybeFilenames = new List<string>();
-            List<string> filenames = new List<string>();
+            List<string> maybeFilenames = [];
+            List<string> filenames = [];
             bool allFilenamesAreSources = false;
 
             for (int i = 0; i < cmdArgs.Length; i++)
@@ -392,8 +392,7 @@ public class CompileCommandsJson : Logger
                 // when the logger shuts down.
                 CompileCommand command;
                 string key = dirname + filename;
-                List<string> prms = new List<string>(arguments);
-                prms.Add(filename);
+                List<string> prms = [.. arguments, filename];
 
                 if (commandLookup.ContainsKey(key))
                 {
