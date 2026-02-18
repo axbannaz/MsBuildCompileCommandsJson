@@ -15,19 +15,19 @@ defines, etc.) for accurate IntelliSense.
 Building the project is straightforward:
 
 ```shell
-winget install --id Microsoft.DotNet.SDK.9
+winget install --id Microsoft.DotNet.SDK.8
 winget install --id Microsoft.DotNet.Framework.DeveloperPack_4
 
 dotnet build
-mkdir -p $HOME\bin
-cp .\bin\x64\Debug\net462\* $HOME\bin
+mkdir -p $HOME/bin
+cp ./bin/x64/Debug/net481/* $HOME/bin
 ```
 
 Then, invoke MSBuild with [the `-logger` option](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-command-line-reference).
 For example:
 
 ```shell
-msbuild "-logger:/path/to/CompileCommandsJson.dll" MyProject
+msbuild "-logger:${env:USERPROFILE}/bin/CompileCommandsJson.dll" MyProject
 ```
 
 By default, `compile_commands.json` is written in the current directory. You can
@@ -40,7 +40,7 @@ msbuild "-logger:/path/to/CompileCommandsJson.dll;path=my_new_compile_commands.j
 Testing
 
 ```shell
-dotnet build .\CompileCommandsJson.csproj && git clean -dfx .\test\ && msbuild "/logger:$(Get-Location)\bin\x64\Debug\net481\CompileCommandsJson.dll" .\test\dir.proj
+dotnet build ./CompileCommandsJson.csproj && git clean -dfx ./test && msbuild "/logger:$(Get-Location)/bin/x64/Debug/net481/CompileCommandsJson.dll" ./test/dir.proj
 ```
 
 ## Limitations

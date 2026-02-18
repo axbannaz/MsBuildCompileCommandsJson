@@ -1,0 +1,78 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "C_Cpp.default.defines": [
+      "_DEBUG",
+      "UNICODE",
+      "_UNICODE"
+    ],
+    "C_Cpp.default.includePath": [
+      "${workspaceFolder}",
+      "${workspaceFolder}/**/inc",
+      "${workspaceFolder}/**/include"
+    ],
+    "C_Cpp.default.intelliSenseMode": "windows-msvc-x64",
+    "C_Cpp.errorSquiggles": "disabled",
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "clangd.enable": true,
+    "dotnet.defaultSolution": "disable",
+    "editor.inlayHints.enabled": "onUnlessPressed",
+    "files.associations": {
+      ".wslconfig": "ini",
+      "*.py.in": "python",
+      "*.pyi.in": "python",
+      "*.tcc": "cpp",
+      "*.tmh": "c",
+      "array": "cpp",
+      "assert.h": "c",
+      "config.h": "c",
+      "crunch_graph_internals.h": "c",
+      "cstring": "cpp",
+      "fstream": "cpp",
+      "fun_hci.h": "c",
+      "fun_json.h": "c",
+      "fun_props.h": "c",
+      "fun_ret.h": "c",
+      "functional": "cpp",
+      "hash_map": "cpp",
+      "hw_nu.h": "c",
+      "in.h": "c",
+      "istream": "cpp",
+      "memory": "cpp",
+      "nucleus.h": "c",
+      "optional": "cpp",
+      "ostream": "cpp",
+      "platform_config_internal.h": "c",
+      "regex": "cpp",
+      "shared_mutex": "cpp",
+      "socket.h": "c",
+      "sstream": "cpp",
+      "stats_json.h": "c",
+      "stddef.h": "c",
+      "stdio.h": "c",
+      "streambuf": "cpp",
+      "string": "cpp",
+      "string_view": "cpp",
+      "telemetry_config.h": "c",
+      "telemetry.h": "c",
+      "thread": "cpp",
+      "topology.h": "c",
+      "tuple": "cpp",
+      "typeinfo": "cpp",
+      "types.h": "c",
+      "unordered_map": "cpp",
+      "vector": "cpp",
+      "vplocal.h": "c",
+      "wu_ids.h": "c",
+      "wuthread.h": "c"
+    },
+    "files.insertFinalNewline": false,
+    "files.trimFinalNewlines": false,
+    "C_Cpp.codeAnalysis.clangTidy.enabled": false,
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/compile_commands.json"
+  }
+}
