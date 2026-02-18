@@ -40,7 +40,7 @@ msbuild "-logger:/path/to/CompileCommandsJson.dll;path=my_new_compile_commands.j
 Testing
 
 ```shell
-dotnet build .\CompileCommandsJson.csproj && git clean -dfx .\test\ && msbuild "/logger:${env:USERPROFILE}\Projects\MsBuildCompileCommandsJson\bin\x64\Debug\net462\CompileCommandsJson.dll" .\test\dir.proj
+dotnet build .\CompileCommandsJson.csproj && git clean -dfx .\test\ && msbuild "/logger:$(Get-Location)\bin\x64\Debug\net481\CompileCommandsJson.dll" .\test\dir.proj
 ```
 
 ## Limitations
