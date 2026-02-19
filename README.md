@@ -21,6 +21,9 @@ winget install --id Microsoft.DotNet.Framework.DeveloperPack_4
 dotnet build
 mkdir -p $HOME/bin
 cp ./bin/x64/Debug/net481/* $HOME/bin
+
+# In VS202x env
+dotnet build CompileCommandsJson.sln /p:Configuration=Debug /p:Platform="Any CPU"
 ```
 
 Then, invoke MSBuild with [the `-logger` option](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-command-line-reference).
