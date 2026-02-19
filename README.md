@@ -19,8 +19,8 @@ winget install --id Microsoft.DotNet.SDK.8
 winget install --id Microsoft.DotNet.Framework.DeveloperPack_4
 
 dotnet build
-mkdir -p $HOME/bin
-cp ./bin/Debug/net481/* $HOME/bin
+mkdir -p ${env:USERPROFILE}/bin
+cp ./bin/Debug/net481/* ${env:USERPROFILE}/bin
 
 # In VS202x env
 dotnet build CompileCommandsJson.sln /p:Configuration=Debug /p:Platform="Any CPU"
