@@ -20,7 +20,7 @@ winget install --id Microsoft.DotNet.Framework.DeveloperPack_4
 
 dotnet build
 mkdir -p $HOME/bin
-cp ./bin/x64/Debug/net481/* $HOME/bin
+cp ./bin/Debug/net481/* $HOME/bin
 
 # In VS202x env
 dotnet build CompileCommandsJson.sln /p:Configuration=Debug /p:Platform="Any CPU"
@@ -30,20 +30,20 @@ Then, invoke MSBuild with [the `-logger` option](https://docs.microsoft.com/en-u
 For example:
 
 ```shell
-msbuild "-logger:${env:USERPROFILE}/bin/CompileCommandsJson.dll" MyProject
+msbuild -logger:"${env:USERPROFILE}/bin/CompileCommandsJson.dll" MyProject
 ```
 
 By default, `compile_commands.json` is written in the current directory. You can
 control the output path using a parameter, e.g.:
 
 ```shell
-msbuild "-logger:/path/to/CompileCommandsJson.dll;path=my_new_compile_commands.json" MyProject
+msbuild -logger:"/path/to/CompileCommandsJson.dll;path=my_new_compile_commands.json" MyProject
 ```
 
 Testing
 
 ```shell
-dotnet build ./CompileCommandsJson.csproj && git clean -dfx ./test && msbuild "/logger:$(Get-Location)/bin/x64/Debug/net481/CompileCommandsJson.dll" ./test/dir.proj
+dotnet build ./CompileCommandsJson.csproj && git clean -dfx ./test && msbuild -logger:./bin/Debug/net481/CompileCommandsJson.dll ./test/dir.proj
 ```
 
 ## Limitations
