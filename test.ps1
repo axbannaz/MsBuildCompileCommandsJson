@@ -7,7 +7,8 @@ Set-Location "${PSScriptRoot}"
 & .\build.ps1
 
 & pwsh -nop -WorkingDirectory (Get-Location) -C {
-	findvs ${env:PROCESSOR_ARCHITECTURE}
+  $arch=${env:PROCESSOR_ARCHITECTURE}.ToLower()
+	findvs -arch="${arch}" -host_arch="${arch}"
 	msbuild -logger:./bin/Debug/net481/CompileCommandsJson.dll test/dir.proj
 }
 
