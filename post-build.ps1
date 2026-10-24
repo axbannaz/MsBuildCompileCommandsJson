@@ -10,6 +10,6 @@ if (!(Test-Path -Path "$binDir")) {
   New-Item -Path "$binDir" -ItemType Directory
 }
 
-Copy-Item -Force bin/Debug/net481/* "$binDir"
+Copy-Item -Force bin/Debug/net10.0/* "$binDir"
 
 Set-Location "${oldPwd}"
