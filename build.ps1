@@ -4,7 +4,7 @@ $oldPwd=Get-Location
 
 Set-Location "${PSScriptRoot}"
 
-& dotnet build CompileCommandsJson.sln /p:Configuration=Debug /p:Platform="Any CPU"
+& dotnet build CompileCommandsJson.csproj /p:Configuration=Debug
 
 & .\post-build.ps1
 
