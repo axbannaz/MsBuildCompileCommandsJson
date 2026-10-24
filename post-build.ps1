@@ -4,7 +4,7 @@ $oldPwd=Get-Location
 
 Set-Location "${PSScriptRoot}"
 
-$binDir="${env:USERPROFILE}/bin"
+$binDir="${HOME}/bin"
 
 if (!(Test-Path -Path "$binDir")) {
   New-Item -Path "$binDir" -ItemType Directory
