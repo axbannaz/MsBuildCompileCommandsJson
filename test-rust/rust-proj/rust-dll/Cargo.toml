@@ -1,0 +1,11 @@
+[package]
+name = "rust-dll"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "rust_dll"
+# crate-type = ["lib", "dylib"]
+crate-type = ["lib", "staticlib",  "dylib"]
+
+[dependencies]

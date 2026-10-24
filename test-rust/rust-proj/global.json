@@ -1,0 +1,10 @@
+{
+  "sdk": {
+    "version": "10.0.203",
+    "rollForward": "latestMinor",
+    "allowPrerelease": true
+  },
+  "msbuild-sdks": {
+    "Microsoft.Build.Cargo": "1.0.337-preview"
+  }
+}

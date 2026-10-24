@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.Build.Cargo">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <!-- Points to the folder containing your Cargo.toml -->
+    <CargoRootDirectory>$(ProjectDir).</CargoRootDirectory>
+  </PropertyGroup>
+</Project>
+
