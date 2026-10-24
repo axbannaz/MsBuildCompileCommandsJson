@@ -6,10 +6,11 @@
     <!-- <TargetFrameworks>net10.0;net481</TargetFrameworks> -->
     <!-- <TargetFrameworks>net9.0;net481</TargetFrameworks> -->
     <!-- <TargetFrameworks>net9.0</TargetFrameworks> -->
-    <TargetFrameworks>net481</TargetFrameworks>
+    <TargetFrameworks>net11.0</TargetFrameworks>
     <RootNamespace>CompileCommandsJson</RootNamespace>
     <Product />
     <Description>A logger for MSBuild that emits a compile_commands.json file.</Description>
+    <ImplicitUsings>enable</ImplicitUsings>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <SelfContained>true</SelfContained>
     <PublishSingleFile>true</PublishSingleFile>
