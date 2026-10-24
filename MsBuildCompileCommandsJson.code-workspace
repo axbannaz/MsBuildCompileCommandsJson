@@ -19,7 +19,7 @@
     "C_Cpp.errorSquiggles": "disabled",
     "C_Cpp.intelliSenseEngine": "disabled",
     "clangd.enable": true,
-    "dotnet.defaultSolution": "disable",
+    "dotnet.defaultSolution": "CompileCommandsJson.sln",
     "editor.inlayHints.enabled": "onUnlessPressed",
     "files.associations": {
       ".wslconfig": "ini",
