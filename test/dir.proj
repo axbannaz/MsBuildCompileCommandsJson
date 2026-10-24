@@ -24,5 +24,6 @@
   </Target>
   <ItemGroup>
     <ProjectFile Include="cpp-proj\cpp-proj.vcxproj" />
+    <ProjectFile Include="rust-proj\rust-proj.vcxproj" />
   </ItemGroup>
 </Project>
