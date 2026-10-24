@@ -89,12 +89,16 @@ public class CompileCommandsJson : Logger
             }
         }
 
-        if(!string.IsNullOrEmpty(logFilePath)) {
-            if (logFilePath.ToLower().StartsWith("stdout")){
+        if (!string.IsNullOrEmpty(logFilePath))
+        {
+            if (logFilePath.ToLower().StartsWith("stdout"))
+            {
                 logStreamWriter = new StreamWriter(Console.OpenStandardOutput());
                 logStreamWriter.AutoFlush = true;
                 Console.SetOut(logStreamWriter);
-            } else {
+            }
+            else
+            {
                 Console.WriteLine("Using " + logFilePath + " for logging");
                 logStreamWriter = new StreamWriter(logFilePath, append, new UTF8Encoding(false));
             }
@@ -446,15 +450,17 @@ public class CompileCommandsJson : Logger
     public override void Shutdown()
     {
         File.WriteAllText(outputFilePath, JsonConvert.SerializeObject(compileCommands, Formatting.Indented));
-        if (logStreamWriter != null) {
+        if (logStreamWriter != null)
+        {
             logStreamWriter.Close();
         }
         base.Shutdown();
     }
 
-    void log (string message)
+    void log(string message)
     {
-        if (logStreamWriter != null) {
+        if (logStreamWriter != null)
+        {
             logStreamWriter.WriteLine(message);
         }
     }
