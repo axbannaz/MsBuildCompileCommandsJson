@@ -1,8 +1,27 @@
 <Project Sdk="Microsoft.Build.Cargo">
+  <PropertyGroup Condition="'$(Platform)' == 'x64'">
+    <CargoTargetTriple>x86_64-pc-windows-msvc</CargoTargetTriple>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Platform)' == 'ARM64'">
+    <CargoTargetTriple>aarch64-pc-windows-msvc</CargoTargetTriple>
+  </PropertyGroup>
+
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <!-- Points to the folder containing your Cargo.toml -->
     <CargoRootDirectory>$(ProjectDir).</CargoRootDirectory>
+    <CargoExtraArgs>--target $(CargoTargetTriple)</CargoExtraArgs>
+
+    <!-- Enforce a specific toolchain channel (e.g., nightly, beta, stable, or explicit version) -->
+    <CargoChannel>nightly</CargoChannel>
+
+    <!-- Space-separated or semicolon-separated feature flags to pass to Cargo -->
+    <CargoFeatures>ssl-backend custom-allocator</CargoFeatures>
+
+    <!-- Disable default cargo features if your project requires total opt-in control -->
+    <CargoNoDefaultFeatures>true</CargoNoDefaultFeatures>
   </PropertyGroup>
+
 </Project>
 
